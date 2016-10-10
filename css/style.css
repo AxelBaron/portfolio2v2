@@ -76,12 +76,19 @@ body{
   color: #99cabb;
 }
 
+#fullpage{
+  display: flex;
+  align-items: center;
+}
+
 header{
   position: fixed;
   height: 30px;
   width: 100%;
   background-image: url('../imgs/pattern.svg');
   z-index: 2;
+  top:0;
+  left: 0;
 }
 
 .wrapper{
@@ -91,6 +98,9 @@ header{
 
 section{
   width: 100%;
+  height: 70vh;
+  justify-content: center;
+  //padding:50px 0px;
 }
 
 a{
@@ -130,6 +140,7 @@ h3{
 .infos_characteristics div:nth-child(1n+5), .ci_text p:nth-child(1n+5){
   text-align: right;
 }
+
 /*////////////////////////////////////////////////////////////////////////////*/
 /* INFOS */
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -191,7 +202,7 @@ h2{
 .infos_logo span{
   background-color: white;
   margin: auto;
-  width: 300px;
+  width: 238px;
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -255,6 +266,7 @@ h2{
 /* PARCOURS */
 /*////////////////////////////////////////////////////////////////////////////*/
 
+
 /*////////////////////////////////////////////////////////////////////////////*/
 /* COMPETENCES */
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -317,4 +329,14 @@ img.compass{
   margin: 0px;
   //display: inline-block;
   height: 40px;
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  display: block;
+  padding: 20px;
+  color: silver;
 }

@@ -18,8 +18,37 @@
   <script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
   <script>
   $(document).ready(function() {
-    $('#fullpage').fullpage();
+    $("#fullpage").fullpage();
+    if($(window).width() > 700) {
+        console.log('pc');
+        $.fn.fullpage.destroy("all");
+        $("#fullpage").fullpage();
+    }else{
+      console.log('smarthkcd');
+      $.fn.fullpage.destroy("all");
+    }
   });
+
+  // Vérification de la taille de la fenêtre après son resize
+  $(window).resize(function(){
+      if(this.resizeTO)clearTimeout(this.resizeTO);
+      this.resizeTO = setTimeout(function(){
+          $(this).trigger('resizeEnd');
+      }, 500);
+  });
+
+  $(window).bind('resizeEnd', function(){
+      window.location.hash="";
+      if($(window).width() > 700) {
+          console.log('pc');
+          $.fn.fullpage.destroy("all");
+          $("#fullpage").fullpage();
+      }else{
+        console.log('smarthkcd');
+        $.fn.fullpage.destroy("all");
+      }
+  });
+
   </script>
 </head>
 
@@ -65,9 +94,10 @@
           <div>
             <p></p>
             <span>
-              <a href="https://fr.linkedin.com/in/axel-baron-95539b83"><img src="imgs/logo-linkedin.svg" alt="linkdin" /></a>
-              <a href="https://twitter.com/Axl_Baron"><img src="imgs/twitter-logo-silhouette.svg" alt="twitter" /></a>
-              <a href="https://www.facebook.com/axlbrn/"><img src="imgs/facebook-logo.svg" alt="facebook" /></a>
+              <a href="imgs/cv_axel_baron.pdf" target="_blank"><img src="imgs/cv.svg" alt="cv" /></a>
+              <a href="https://fr.linkedin.com/in/axel-baron-95539b83" target="_blank"><img src="imgs/logo-linkedin.svg" alt="linkdin" /></a>
+              <a href="https://twitter.com/Axl_Baron" target="_blank"><img src="imgs/twitter-logo-silhouette.svg" alt="twitter" /></a>
+              <a href="https://www.facebook.com/axlbrn/" target="_blank"><img src="imgs/facebook-logo.svg" alt="facebook" /></a>
             </span>
             <p></p>
           </div>
@@ -77,6 +107,8 @@
 
       <section class="section">
         <div class="barre_h3"><h3>Parcours</h3></div>
+        <div class="parcours">
+        <img src="imgs/dateline.png">
       </section>
 
       <section class="section">
@@ -118,6 +150,7 @@
           <p>Lecture</p>
           <p>Jeux vidéos</p>
         </div>
+        <footer>© Axel Baron.</footer>
       </section>
     </div>
   </div>
