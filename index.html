@@ -8,47 +8,36 @@
 	<meta type='keywords' content='Axel,Baron,axelbaron,MMI,MIM,licence,web,dévloppeur,front,web front,portfolio,2 francais au québec'>
 	<meta name="author" content="Axel Baron" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="js/jquery.fullPage.css" />
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <meta name="viewport" content="width=device-width">
 
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="js/jquery.fullPage.css" media="screen"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css"  media="screen"/>
 
   <!-- JS -->
   <script src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
   <script>
   $(document).ready(function() {
-    $("#fullpage").fullpage();
+
+    screen.orientation.lock('landscape');
+
     if($(window).width() > 700) {
-        console.log('pc');
-        $.fn.fullpage.destroy("all");
-        $("#fullpage").fullpage();
-    }else{
-      console.log('smarthkcd');
-      $.fn.fullpage.destroy("all");
+      $("#fullpage").fullpage();
+      console.log('cratfullpage');
     }
-  });
 
-  // Vérification de la taille de la fenêtre après son resize
-  $(window).resize(function(){
-      if(this.resizeTO)clearTimeout(this.resizeTO);
-      this.resizeTO = setTimeout(function(){
-          $(this).trigger('resizeEnd');
-      }, 500);
-  });
-
-  $(window).bind('resizeEnd', function(){
-      window.location.hash="";
-      if($(window).width() > 700) {
-          console.log('pc');
-          $.fn.fullpage.destroy("all");
-          $("#fullpage").fullpage();
-      }else{
-        console.log('smarthkcd');
-        $.fn.fullpage.destroy("all");
+    // Vérification de la taille de la fenêtre après son resize
+    $(window).resize(function(){
+      if ($(window).width() < 700) {
+        $.fn.fullpage.destroy('all');
       }
+      if ($(window).width() > 700) {
+        $.fn.fullpage.destroy('all');
+        $("#fullpage").fullpage();
+      }
+    });
   });
-
   </script>
 </head>
 
@@ -141,7 +130,9 @@
       </section>
 
       <section class="section">
-        <div class="barre_h3"><h3>Centres d'interet</h3></div>
+        <div class="barre_h3" id="ci--pc"><h3>Centres <br/> d'interet</h3></div>
+        <div class="barre_h3" id="ci--phone"><h3><span>Centres</span> <span>d'interet</span></h3></div>
+
         <div class="ci_text">
           <p>Musique</p>
           <p>Guitare basse</p>
