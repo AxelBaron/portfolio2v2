@@ -55,6 +55,18 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family:'Montserrat-Bold';
+  src: url('../fonts/Montserrat-Bold.eot');
+  src: url('../fonts/Montserrat-Bold.woff2') format('woff2'),
+       url('../fonts/Montserrat-Bold.woff') format('woff'),
+       url('../fonts/Montserrat-Bold.ttf') format('truetype'),
+       url('../fonts/Montserrat-Bold.svg#Montserrat-Bold') format('svg'),
+       url('../fonts/Montserrat-Bold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /* ANIMATIONS */
@@ -73,7 +85,7 @@
 
 body{
   font-family: "Montserrat-Light";
-  color: #99cabb;
+  color: #1e95ab;
 }
 
 #container { display:block; }
@@ -99,7 +111,9 @@ header{
   position: fixed;
   height: 30px;
   width: 100%;
-  background-image: url('../imgs/pattern.svg');
+  background-image: url('../imgs/barre.svg');
+  background-size: cover;
+  background-position: top;
   z-index: 2;
   top:0;
   left: 0;
@@ -130,18 +144,19 @@ section{
 
 a{
   text-decoration: none;
-  color: #99cabb;
+  color: #1e95ab;
   cursor: pointer;
 }
 
 .barre_h3{
-  background-image: url('../imgs/pattern.svg');
+  background-image: url('../imgs/barre.svg');
   height: 40px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 60px;
+  background-size: cover;
 }
 
 @media screen and (max-width: 700px) {
@@ -188,7 +203,7 @@ h3{
 h1{
   padding-bottom: 30px;
   margin-bottom: 30px;
-  border-bottom: 4px solid #99cabb;
+  border-bottom: 4px solid #1e95ab;
 }
 
 @media screen and (max-width: 700px) {
@@ -199,7 +214,6 @@ h1{
 }
 
 h2{
-  color: #99cabb;
   font-family: 'nevis-Bold';
   text-align: center;
   text-transform: uppercase;
@@ -274,7 +288,7 @@ h2{
 
 .infos_logo p{
   display: inline-block;
-  background: #99cabb;
+  background: #1e95ab;
   height: 4px;
   width: 33%;
 }
@@ -297,7 +311,7 @@ h2{
 }
 
 .infos_logo a{
-  background-color: #99cabb;
+  background-color: #1e95ab;
   display: inline-block;
   border-radius: 500px;
   width: 40px;
@@ -375,8 +389,23 @@ h2{
 /* PARCOURS */
 /*////////////////////////////////////////////////////////////////////////////*/
 
-.parcours img{
-  width: 100%;
+.parcours{
+  display: flex;
+  justify-content: space-around;
+}
+
+#formations, #experiences{
+  width: 250px;
+}
+
+h4, #formations div p:first-child, #experiences div p:first-child{
+  font-family: 'Montserrat-Bold';
+  text-transform: uppercase;
+  line-height: 26px;
+}
+
+.parcours p{
+  line-height: 26px;
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
